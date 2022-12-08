@@ -19,7 +19,7 @@ right_heights = list([list([-1 for _ in range(10)]) for _ in range(columns)])
 top_heights = list([list([-1 for _ in range(10)]) for _ in range(rows)])
 bottom_heights = list([list([-1 for _ in range(10)]) for _ in range(rows)])
 
-# Figure visibility lines
+# Figure visibility boundaries
 for row in range(rows):
     top = top_heights[row]
     bottom = bottom_heights[row]
