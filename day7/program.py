@@ -21,15 +21,16 @@ class FileSystem:
             return
 
     def process_listing(self, parts):
-        if parts[1] in self.current_directory:
-            print(f"WARNING: Duplicate name ${parts[0]}")
+        filename = parts[1]
+        if filename in self.current_directory:
+            print(f"WARNING: Duplicate name ${filename}")
         if parts[0] == "dir":
-            self.current_directory[parts[1]] = {
+            self.current_directory[filename] = {
                 "..": self.current_directory
             }
         else:
             size = int(parts[0])
-            self.current_directory[parts[1]] = size
+            self.current_directory[filename] = size
 
     def process_line(self, line: str):
         parts = line.split(" ")
